@@ -116,7 +116,6 @@ public class ProblemSet3 {
     }
 
 
-    }
 
     /*
      * Exercise 4.
@@ -165,7 +164,25 @@ public class ProblemSet3 {
 
     public void grade() {
 
+      System.out.print("\nEnter a grade: ");
+      double grade = in .nextDouble(); in .nextLine();
+
+      if (grade > 100) {
+        System.out.println("\nGrades above 100 are invalid.");
+    } else if (grade < 0) {
+        System.out.println("\nGrades below 0 are invalid.");
+    } else if (grade <= 100 && grade >= 90) {
+        System.out.println("\nYou received an A.");
+    } else if (grade < 90 && grade >= 80) {
+        System.out.println("\nYou received a B.");
+    } else if (grade < 80 && grade >= 70) {
+        System.out.println("\nYou received a C.");
+    } else if (grade < 70 && grade >= 60) {
+        System.out.println("\nYou received a D.");
+    } else {
+        System.out.println("\nYou received an F.");
     }
+  }
 
     /*
      * Exercise 6.
@@ -175,7 +192,18 @@ public class ProblemSet3 {
 
     public void cards() {
 
+      System.out.print("\nEnter a card: ");
+
+      String card = in .nextLine();
+      card = card.toUpperCase();
+
+      char firstCharacter = card.charAt(0);
+      char secondCharacter = card.charAt(1);
+      
+      if (card.length() == 3) {
+        thirdCharacter = card.charAt(2);
     }
+  }
 
     /*
      * Exercise 7.
