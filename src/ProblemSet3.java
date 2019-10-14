@@ -199,11 +199,54 @@ public class ProblemSet3 {
 
       char firstCharacter = card.charAt(0);
       char secondCharacter = card.charAt(1);
-      
+
       if (card.length() == 3) {
         thirdCharacter = card.charAt(2);
-    }
-  }
+      }
+
+      if (firstCharacter == 'A') {
+        rank = "Ace";
+    } else if (firstCharacter == 'K') {
+        rank = "King";
+    } else if (firstCharacter == 'Q') {
+        rank = "Queen";
+    } else if (firstCharacter == 'J') {
+        rank = "Jack";
+    } else if (firstCharacter == '1') {
+        rank = "Ten";
+    } else if (firstCharacter == '9') {
+        rank = "Nine";
+    } else if (firstCharacter == '8') {
+        rank = "Eight";
+    } else if (firstCharacter == '7') {
+        rank = "Seven";
+    } else if (firstCharacter == '6') {
+        rank = "Six";
+    } else if (firstCharacter == '5') {
+        rank = "Five";
+    } else if (firstCharacter == '4') {
+        rank = "Four";
+    } else if (firstCharacter == '3') {
+        rank = "Three";
+    } else if (firstCharacter == '2') {
+        rank = "Two";
+}
+
+      if (secondCharacter == 'C' || thirdCharacter == 'C') {
+        suit = "Clubs";
+    } else if (secondCharacter == 'D' || thirdCharacter == 'D') {
+        suit = "Diamonds";
+    } else if (secondCharacter == 'H' || thirdCharacter == 'H') {
+        suit = "Hearts";
+    } else if (secondCharacter == 'S' || thirdCharacter == 'S') {
+      suit = "Spades";
+}
+
+
+System.out.println("\n" + rank + " of " + suit + ".");
+
+}
+
 
     /*
      * Exercise 7.
@@ -212,6 +255,19 @@ public class ProblemSet3 {
      */
 
     public void leapYear() {
+      System.out.print("\nEnter a year: ");
+      int year = in .nextInt();
+
+      while (year < 0) {
+        System.out.print("\nInvalid entry. Enter a year greater than 0: ");
+        year = in .nextInt();
+      }
+
+      if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        System.out.println("\n" + year + " is a leap year.");
+      } else {
+        System.out.println("\n" + year + " is not a leap year.");
+      }
 
     }
 
@@ -223,6 +279,39 @@ public class ProblemSet3 {
      */
 
     public void state() {
+
+        System.out.print("\nEnter a temperature: ");
+        double temperature = in .nextDouble();
+
+        System.out.print("Enter a scale: ");
+
+        char scale = in .next().charAt(0);
+        scale = Character.toUpperCase(scale);
+
+        final int FAH_FREEZE_PT = 32;
+        final int FAH_BOIL_PT = 212;
+        final int CEL_FREEZE_PT = 0;
+        final int CEL_BOIL_PT = 100;
+
+        if (scale != 'F' && scale != 'C') {
+            System.out.println("\nThat's not a valid scale.");
+        } else if (scale == 'F') {
+            if (temperature <= FAH_FREEZE_PT) {
+                System.out.println("\nSolid.");
+            } else if (temperature > FAH_FREEZE_PT && temperature < FAH_BOIL_PT) {
+                System.out.println("\nLiquid.");
+            } else if (temperature >= FAH_BOIL_PT) {
+                System.out.println("\nGas.");
+            }
+        } else if (scale == 'C') {
+            if (temperature <= CEL_FREEZE_PT) {
+                System.out.println("\nSolid.");
+            } else if (temperature > CEL_FREEZE_PT && temperature < CEL_BOIL_PT) {
+                System.out.println("\nLiquid.");
+            } else if (temperature >= CEL_BOIL_PT) {
+                System.out.println("\nGas.");
+            }
+        }
 
     }
 
