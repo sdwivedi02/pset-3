@@ -323,6 +323,21 @@ System.out.println("\n" + rank + " of " + suit + ".");
 
     public void months() {
 
+      System.out.print("\nEnter a month: ");
+      String month = in .nextLine();
+      month = month.toLowerCase();
+
+      if (month.equals("january") || month.equals("march") || month.equals("may")
+      || month.equals("july") || month.equals("august") || month.equals("october") || month.equals("december")) {
+        System.out.println("\n31 days.");
+    } else if (month.equals("april") || month.equals("june") || month.equals("september") || month.equals("november")) {
+        System.out.println("\n30 days.");
+    } else if (month.equals("february")) {
+        System.out.println("\n28 or 29 days.");
+    } else {
+        System.out.println("\nThat's not a valid month.");
+}
+
     }
 
     /*
@@ -332,6 +347,35 @@ System.out.println("\n" + rank + " of " + suit + ".");
      */
 
     public void salary() {
+
+      System.out.print("\nWage: ");
+      double wage = in .nextDouble();
+
+      while (wage < 0.01) {
+        System.out.println("Invalid entry. Enter a wage greater than 0: ");
+      }
+
+      System.out.print("Hours: ");
+      double hours = in .nextDouble();
+
+      while (hours < 0) {
+        System.out.println("Invalid entry. Enter a number of hours greater than 0: ");
+      }
+
+      double overtime = hours - 40;
+
+      if (overtime > 0) {
+        hours = 40;
+        double overtimepay = overtime * (1.5 * wage);
+        paycheck = (wage * hours) + overtimepay;
+    } else if (overtime <= 0) {
+        paycheck = wage * hours;
+      }
+
+      System.out.printf("\nYou'll make $%,.2f", paycheck);
+      System.out.print(" this week.\n\n");
+
+}
 
     }
 }
