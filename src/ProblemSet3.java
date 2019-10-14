@@ -91,6 +91,29 @@ public class ProblemSet3 {
 
     public void ordered() {
 
+      System.out.println("Enter three integers.\n");
+
+      System.out.print("Enter integer: ");
+      int integer1 = in .nextInt();
+
+      System.out.print("Enter integer: ");
+      int integer2 = in .nextInt();
+
+      System.out.print("Enter integer: ");
+      int integer3 = in .nextInt();
+
+      if (integer1 < integer2 && integer2 < integer3) {
+          System.out.println("\nStrictly increasing.");
+      } else if (integer1 <= integer2 && integer2 <= integer3) {
+          System.out.println("\nIncreasing.");
+      } else if (integer1 > integer2 && integer2 > integer3) {
+          System.out.println("\nStrictly decreasing.");
+      } else if (integer1 >= integer2 && integer2 >= integer3) {
+          System.out.println("\nDecreasing.");
+      } else {
+          System.out.println("\nUnordered.");
+      }
+    }
 
 
     }
@@ -103,10 +126,36 @@ public class ProblemSet3 {
 
     public void gpa() {
 
-      System.out.println("Enter a letter grade: ");
-      int letterGrade = to.UpperCase(int.nextInt());
+      System.out.print("\nEnter a letter grade: "); in.nextLine();
+      String grade = in .nextLine();
+      grade = grade.toUpperCase();
 
-    }
+      if (grade.charAt(0) == 'A') {
+          gpa = 4.00;
+      } else if (grade.charAt(0) == 'B') {
+          gpa = 3.00;
+      } else if (grade.charAt(0) == 'C') {
+          gpa = 2.00;
+      } else if (grade.charAt(0) == 'D') {
+          gpa = 1.00;
+      } else if (grade.charAt(0) == 'F') {
+          gpa = 0.00;
+          System.out.printf("\nYour GPA is %.2f", gpa);
+          System.out.print(".\n");
+          return;
+      }
+
+      if (grade.length() == 2) {
+          if (grade.charAt(1) == '+' && (grade.charAt(0) != 'F' || grade.charAt(0) != 'f')) {
+              gpa += 0.33;
+          } else if (grade.charAt(1) == '-' && (grade.charAt(0) != 'F' || grade.charAt(0) != 'f')) {
+              gpa -= 0.33;
+          }
+      }
+
+      System.out.printf("\nYour GPA is %.2f", gpa);
+      System.out.print(".\n");
+      }
 
     /*
      * Exercise 5.
