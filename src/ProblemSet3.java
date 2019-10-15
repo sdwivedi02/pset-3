@@ -30,14 +30,14 @@ public class ProblemSet3 {
 
         ps.sign();          // executes Exercise 1
         ps.parity();        // executes Exercise 2
-        //ps.ordered();       // executes Exercise 3
-        //ps.gpa();           // executes Exercise 4
-        //ps.grade();         // executes Exercise 5
-        //ps.cards();         // executes Exercise 6
-        //ps.leapYear();      // executes Exercise 7
-        //ps.state();         // executes Exercise 8
-        //ps.months();        // executes Exercise 9
-        //ps.salary();        // executes Exercise 10
+        ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
+        ps.cards();         // executes Exercise 6
+        ps.leapYear();      // executes Exercise 7
+        ps.state();         // executes Exercise 8
+        ps.months();        // executes Exercise 9
+        ps.salary();        // executes Exercise 10
 
         in.close();
     }
