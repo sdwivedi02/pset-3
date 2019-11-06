@@ -129,6 +129,7 @@ public class ProblemSet3 {
       String grade = in .nextLine();
       grade = grade.toUpperCase();
 
+      double gpa = 0.00;
       if (grade.charAt(0) == 'A') {
           gpa = 4.00;
       } else if (grade.charAt(0) == 'B') {
@@ -200,11 +201,13 @@ public class ProblemSet3 {
       char firstCharacter = card.charAt(0);
       char secondCharacter = card.charAt(1);
 
+      char thirdCharacter = ' ';
       if (card.length() == 3) {
         thirdCharacter = card.charAt(2);
       }
 
-      if (firstCharacter == 'A') {
+      String rank = "";
+    if (firstCharacter == 'A') {
         rank = "Ace";
     } else if (firstCharacter == 'K') {
         rank = "King";
@@ -232,6 +235,7 @@ public class ProblemSet3 {
         rank = "Two";
 }
 
+  String suit = "";
       if (secondCharacter == 'C' || thirdCharacter == 'C') {
         suit = "Clubs";
     } else if (secondCharacter == 'D' || thirdCharacter == 'D') {
@@ -363,7 +367,7 @@ System.out.println("\n" + rank + " of " + suit + ".");
       }
 
       double overtime = hours - 40;
-
+      double paycheck = 0;
       if (overtime > 0) {
         hours = 40;
         double overtimepay = overtime * (1.5 * wage);
@@ -374,8 +378,6 @@ System.out.println("\n" + rank + " of " + suit + ".");
 
       System.out.printf("\nYou'll make $%,.2f", paycheck);
       System.out.print(" this week.\n\n");
-
-}
 
     }
 }
